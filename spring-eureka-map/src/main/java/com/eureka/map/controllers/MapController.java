@@ -23,6 +23,7 @@ public class MapController {
 	private static final Logger log = LoggerFactory.getLogger(MapController.class);
 
 	private final MapRepository repository;
+	
 	@Autowired
 	private RestTemplate restTemplate;
 	

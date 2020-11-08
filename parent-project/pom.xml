@@ -15,6 +15,7 @@
         <module>../spring-eureka-server</module>
         <module>../spring-eureka-zuul</module>
 		<module>../spring-eureka-map</module>
+		<module>../spring-eureka-user</module>
     </modules>
     <packaging>pom</packaging>
 
