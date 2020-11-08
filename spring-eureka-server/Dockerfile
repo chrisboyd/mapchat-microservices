@@ -1,6 +1,6 @@
 FROM maven:3.6.3-jdk-8 AS build
-COPY /src /home/app/arc
-COPY /pom.xml /home/app
+COPY /spring-eureka-server/src /home/app/arc
+COPY /spring-eureka-server/pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
 FROM openjdk:8
