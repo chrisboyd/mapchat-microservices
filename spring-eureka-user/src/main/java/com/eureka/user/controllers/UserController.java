@@ -44,6 +44,7 @@ public class UserController {
 	
 	@PostMapping("/")
 	User newUser(@RequestBody User newUser) {
+		
 		return repository.save(newUser);
 	}
 	

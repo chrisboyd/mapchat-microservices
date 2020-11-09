@@ -3,10 +3,18 @@ package com.eureka.mapgroup.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.validation.constraints.NotNull;
 
 @Entity
-public class MapGroup {
-	private @Id @GeneratedValue int id;
+@Table(name = "mapgroup")
+public class MapGroup extends AuditModel{
+	@Id 
+	@GeneratedValue 
+	private int id;
+	
+	@NotNull
 	private String name;
 	
 	public MapGroup() {}
