@@ -1,7 +1,7 @@
-package com.eureka.map.controllers;
+package com.eureka.mapgroup.controllers;
 
-import com.eureka.map.repository.MapRepository;
-import com.eureka.map.entities.Map;
+import com.eureka.mapgroup.entities.MapGroup;
+import com.eureka.mapgroup.repository.MapGroupRepository;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
@@ -19,10 +19,10 @@ import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping("/")
-public class MapController {
-	private static final Logger log = LoggerFactory.getLogger(MapController.class);
+public class MapGroupController {
+	private static final Logger log = LoggerFactory.getLogger(MapGroupController.class);
 
-	private final MapRepository repository;
+	private final MapGroupRepository repository;
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -30,57 +30,48 @@ public class MapController {
 	@Autowired
 	private Environment env;
 	
-	MapController(MapRepository repository){
+	MapGroupController(MapGroupRepository repository){
 		this.repository = repository;		
 	}
-		
+	
 	@RequestMapping("/port")
 	public String home() {
 		// This is useful for debugging
 		// When having multiple instance of gallery service running at different ports.
 		// We load balance among them, and display which instance received the request.
-		return "Hello from Map Service running at port: " + env.getProperty("local.server.port");
+		return "Hello from MapGroup Service running at port: " + env.getProperty("local.server.port");
 	}
 	
 	//Aggregate
 	@GetMapping("/")
-	List<Map> all() {
+	List<MapGroup> all() {
 		return repository.findAll();
 	}
 	
 	@PostMapping("/")
-	Map newMap(@RequestBody Map newMap) {
-		return repository.save(newMap);
-	}
-	
-	//Single Listing
-	@GetMapping("/{id}")
-	Map one(@PathVariable int id) {
-		return repository.findById(id)
-			      .orElseThrow(() -> new MapNotFoundException(id));
-
+	MapGroup newMapGroup(@RequestBody MapGroup newMapGroup) {
+		return repository.save(newMapGroup);
 	}
 	
 	@PutMapping("/{id}")
-	  Map replaceMap(@RequestBody Map newMap, @PathVariable int id) {
-
+	MapGroup replaceMapGroup(@RequestBody MapGroup newMapGroup, @PathVariable int id) {
 	    return repository.findById(id)
-	      .map(map -> {
-	    	  map.setLatitude(newMap.getLatitude());
-	    	  map.setLongitude(newMap.getLongitude());
-	    	  map.setRange(newMap.getRange());
-	    	  return repository.save(map);
+	      .map(mapgroup -> {
+	    	  mapgroup.setName(newMapGroup.getName());
+	    	  return repository.save(mapgroup);
 	      })
 	      .orElseGet(() -> {
-	        newMap.setId(id);
-	        return repository.save(newMap);
+	        newMapGroup.setId(id);
+	        return repository.save(newMapGroup);
 	      });
-	  }
-
-	  @DeleteMapping("/{id}")
-	  void deleteMap(@PathVariable int id) {
-	    repository.deleteById(id);
-	  }
+	}
 	
+	@DeleteMapping("/{id}")
+	void deleteMapGroup(@PathVariable int id) {
+		repository.deleteById(id);
+	}
+	
+
+
 	
 }
