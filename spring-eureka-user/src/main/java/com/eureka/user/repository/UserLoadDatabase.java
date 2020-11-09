@@ -1,9 +1,6 @@
 package com.eureka.user.repository;
 
 import com.eureka.user.entities.User;
-import com.eureka.user.repository.UserLoadDatabase;
-import com.eureka.user.repository.UserRepository;
-import com.eureka.user.entities.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
