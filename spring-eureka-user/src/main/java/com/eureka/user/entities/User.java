@@ -3,8 +3,7 @@ package com.eureka.user.entities;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.HashSet;  
-import java.util.Set;
+
 
 @Entity
 public class User {
@@ -14,7 +13,7 @@ public class User {
 	private String email;
 	private String phoneNumber;
 	
-	private Set<User> friends;
+	
 	
 	public User() {}
 	
@@ -23,7 +22,6 @@ public class User {
 		this.lastName = lastName;
 		this.email = email;
 		this.phoneNumber = phoneNumber;
-		this.friends = new HashSet<User>();
 	}
 	
 	public int getId() {
@@ -55,11 +53,5 @@ public class User {
 	}
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
-	}
-	public void addFriend(User newFriend) {
-		friends.add(newFriend);
-	}
-	public Set<User> getFriends(){
-		return friends;
 	}
 }

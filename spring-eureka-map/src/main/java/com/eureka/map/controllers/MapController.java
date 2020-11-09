@@ -62,7 +62,7 @@ public class MapController {
 	}
 	
 	@PutMapping("/{id}")
-	  Map replacemap(@RequestBody Map newMap, @PathVariable int id) {
+	Map replaceMap(@RequestBody Map newMap, @PathVariable int id) {
 
 	    return repository.findById(id)
 	      .map(map -> {
@@ -78,9 +78,7 @@ public class MapController {
 	  }
 
 	  @DeleteMapping("/{id}")
-	  void deletemap(@PathVariable int id) {
+	  void deleteMao(@PathVariable int id) {
 	    repository.deleteById(id);
-	  }
-	
-	
+	  }	
 }
