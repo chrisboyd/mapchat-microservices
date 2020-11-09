@@ -12,6 +12,9 @@ The series of articles can be found below:
 Note: open a terminal window for each directory (parent-project, spring-eureka-server/target, spring-eureka-zuul/target and spring-eureka-map/target).
 
 Note: Wait for each run to complete before the starting the next, server must be loaded before zuul can start and zuul must be loaded before any following microservices can be run.
+
+Note: You need to install maven and add it to your path in order for mvn command to work 
+
 1. In directory 'parent-project'
 2. Run 'mvn install on cmd line', this will build the eureka-server, zuul and map-service
 3. In directory 'spring-eureka-server/target'
@@ -20,3 +23,10 @@ Note: Wait for each run to complete before the starting the next, server must be
 6. Run 'java -jar spring-eureka-zuul-0.0.1-SNAPSHOT.jar'
 7. In directory 'spring-eureka-map/target'
 8. Run 'java -jar spring-eureka-map-0.0.1-SNAPSHOT.jar'
+
+Testing:
+1) eureka server will show all microservices connect: localhost:8761
+2) post/get/delete/put for services: localhost:8762/map or /user or /mapgroup 
+3) each microservice has a Controller.java (ie MapController, UserController, MapGroupController) that outlines the format. 
+Mostly GET returns all items (so localhost:8762/map gets list of all maps, localhost:/8762/map/1 gets map with id 1).
+4) Database for each service is defined under each services 'entities' package. Each private attribute of the class is a column in a database.
