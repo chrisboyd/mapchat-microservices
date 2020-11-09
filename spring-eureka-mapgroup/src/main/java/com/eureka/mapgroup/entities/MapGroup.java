@@ -28,4 +28,12 @@ public class MapGroup {
 		this.name = name;
 	}
 	
+	public int getMap() {
+		return 1;
+	}
+	
+	public int getMembers(){
+		return 1234;
+	}
+	
 }

@@ -71,7 +71,10 @@ public class MapGroupController {
 		repository.deleteById(id);
 	}
 	
-
-
+	@GetMapping("/members/{id}")
+	int getMembers(@PathVariable int id){
+		return repository.findById(id).get().getMembers();
+				
+	}
 	
 }

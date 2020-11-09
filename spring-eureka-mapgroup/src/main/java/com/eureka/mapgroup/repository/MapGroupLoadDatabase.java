@@ -13,10 +13,10 @@ public class MapGroupLoadDatabase {
 	private static final Logger log = LoggerFactory.getLogger(MapGroupLoadDatabase.class);
 
 	@Bean
-	  CommandLineRunner initDatabase(MapGroupRepository repository) {
+	CommandLineRunner initDatabase(MapGroupRepository repository) {
 	    return args -> {
 	      log.info("Preloading " + repository.save(new MapGroup("White Council")));
 	    };
-	  }
+	}
 
 }
