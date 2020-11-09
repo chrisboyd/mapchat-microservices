@@ -17,6 +17,7 @@
 		<module>../spring-eureka-map</module>
 		<module>../spring-eureka-user</module>
 		<module>../spring-eureka-mapgroup</module>
+		<module>../spring-eureka-message</module>
     </modules>
     <packaging>pom</packaging>
 
