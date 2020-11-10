@@ -25,6 +25,17 @@ public class MessageController {
             Pageable pageable){
             	return messageRepository.findByPostId(mapGroupId, pageable);
     }
+
+	@PostMapping("/{mapGroupId/messages")
+	public Message createMessage(@PathVariable (value = "mapGroupId") int mapGroupId,
+								@Valid @RequestBody Message message) {
+		return mapGroupRepository.findById(mapGroupId).map(mapGroup -> {
+			message.setMapGroup(mapGroup);
+			return messageRepository.save(message);
+		}).orElseThrow(() -> new MapGroupNotFoundException(mapGroupId));
+	}
+	
+	
 	
 	
 
