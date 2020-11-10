@@ -14,6 +14,9 @@ public class Message {
 	private int id;
 	
 	@NotNull
+	private int userId;
+	
+	@NotNull
 	@Lob
 	private String text;
 	
@@ -43,5 +46,10 @@ public class Message {
 	public void setMapGroup(MapGroup mapGroup) {
 		this.mapGroup = mapGroup;
 	}
-
+	public int getUserId() {
+		return userId;
+	}
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 }

@@ -23,10 +23,10 @@ public class MessageController {
 	@GetMapping("/{mapGroupId}/messages")
 	public Page<Message> getAllMessagesByGroupId(@PathVariable (value = "mapGroupId") int mapGroupId,
             Pageable pageable){
-            	return messageRepository.findByPostId(mapGroupId, pageable);
+            	return messageRepository.findByMapGroupId(mapGroupId, pageable);
     }
 
-	@PostMapping("/{mapGroupId/messages")
+	@PostMapping("/{mapGroupId}/messages")
 	public Message createMessage(@PathVariable (value = "mapGroupId") int mapGroupId,
 								@Valid @RequestBody Message message) {
 		return mapGroupRepository.findById(mapGroupId).map(mapGroup -> {

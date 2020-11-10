@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 public interface MessageRepository extends JpaRepository<Message, Integer>{
-	Page<Message> findByPostId(int mapGroupId, Pageable pageable);
-    Optional<Message> findByIdAndPostId(int id, int mapGroupId);
+	Page<Message> findByMapGroupId(int mapGroupId, Pageable pageable);
+    Optional<Message> findByIdAndMapGroupId(int id, int mapGroupId);
 }
