@@ -17,12 +17,14 @@ import org.springframework.web.client.RestTemplate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+
 @RestController
 @RequestMapping("/")
 public class MapGroupController {
 	private static final Logger log = LoggerFactory.getLogger(MapGroupController.class);
 
-	private final MapGroupRepository repository;
+	@Autowired
+	private final MapGroupRepository mapGroupRepository;
 	
 	@Autowired
 	private RestTemplate restTemplate;
@@ -31,7 +33,7 @@ public class MapGroupController {
 	private Environment env;
 	
 	MapGroupController(MapGroupRepository repository){
-		this.repository = repository;		
+		this.mapGroupRepository = repository;		
 	}
 	
 	@RequestMapping("/port")
@@ -45,35 +47,36 @@ public class MapGroupController {
 	//Aggregate
 	@GetMapping("/")
 	List<MapGroup> all() {
-		return repository.findAll();
+		return mapGroupRepository.findAll();
 	}
 	
 	@PostMapping("/")
 	MapGroup newMapGroup(@RequestBody MapGroup newMapGroup) {
-		return repository.save(newMapGroup);
+		log.info("POST mapGroup" + newMapGroup.getMembers());
+		return mapGroupRepository.save(newMapGroup);
 	}
 	
 	@PutMapping("/{id}")
 	MapGroup replaceMapGroup(@RequestBody MapGroup newMapGroup, @PathVariable int id) {
-	    return repository.findById(id)
+	    return mapGroupRepository.findById(id)
 	      .map(mapgroup -> {
 	    	  mapgroup.setName(newMapGroup.getName());
-	    	  return repository.save(mapgroup);
+	    	  return mapGroupRepository.save(mapgroup);
 	      })
 	      .orElseGet(() -> {
 	        newMapGroup.setId(id);
-	        return repository.save(newMapGroup);
+	        return mapGroupRepository.save(newMapGroup);
 	      });
 	}
 	
 	@DeleteMapping("/{id}")
 	void deleteMapGroup(@PathVariable int id) {
-		repository.deleteById(id);
+		mapGroupRepository.deleteById(id);
 	}
 	
-	@GetMapping("/members/{id}")
+	@GetMapping("/members")
 	int getMembers(@PathVariable int id){
-		return repository.findById(id).get().getMembers();
+		return mapGroupRepository.findById(id).get().getMembers();
 				
 	}
 	
