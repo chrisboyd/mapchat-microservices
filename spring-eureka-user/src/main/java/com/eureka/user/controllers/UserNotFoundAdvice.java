@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 
 
 @ControllerAdvice
-class MapNotFoundAdvice {
+class UserNotFoundAdvice {
 
   @ResponseBody
   @ExceptionHandler(UserNotFoundException.class)
   @ResponseStatus(HttpStatus.NOT_FOUND)
-  String mapNotFoundHandler(UserNotFoundException ex) {
+  String userNotFoundHandler(UserNotFoundException ex) {
     return ex.getMessage();
   }
 }
