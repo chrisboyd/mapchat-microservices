@@ -17,6 +17,12 @@ public class MapGroup extends AuditModel{
 	@NotNull
 	private String name;
 	
+	@NotNull
+	private int mapId;
+	
+	@NotNull
+	private String members;
+	
 	public MapGroup() {}
 	
 	public MapGroup(String name) {
@@ -36,12 +42,18 @@ public class MapGroup extends AuditModel{
 		this.name = name;
 	}
 	
+	public void setMapId(int mapId) {
+		this.mapId = mapId;
+	}
 	public int getMap() {
-		return 1;
+		return mapId;
 	}
 	
-	public int getMembers(){
-		return 1234;
+	public String getMembers() {
+		return members;
+	}
+	public void setMembers(String members) {
+		this.members = members;
 	}
 	
 }

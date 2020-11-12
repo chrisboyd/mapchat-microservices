@@ -52,7 +52,6 @@ public class MapGroupController {
 	
 	@PostMapping("/")
 	MapGroup newMapGroup(@RequestBody MapGroup newMapGroup) {
-		log.info("POST mapGroup" + newMapGroup.getMembers());
 		return mapGroupRepository.save(newMapGroup);
 	}
 	
@@ -75,7 +74,7 @@ public class MapGroupController {
 	}
 	
 	@GetMapping("/members")
-	int getMembers(@PathVariable int id){
+	String getMembers(@PathVariable int id){
 		return mapGroupRepository.findById(id).get().getMembers();
 				
 	}
