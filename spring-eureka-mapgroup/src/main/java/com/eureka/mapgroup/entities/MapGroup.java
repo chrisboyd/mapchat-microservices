@@ -20,13 +20,14 @@ public class MapGroup extends AuditModel{
 	@NotNull
 	private int mapId;
 	
-	@NotNull
 	private String members;
 	
 	public MapGroup() {}
 	
-	public MapGroup(String name) {
+	public MapGroup(String name, int mapId, String members) {
 		this.name = name;
+		this.mapId = mapId;
+		this.members = members;
 	}
 	
 	public int getId() {

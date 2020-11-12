@@ -15,7 +15,7 @@ public class MapGroupLoadDatabase {
 	@Bean
 	CommandLineRunner initDatabase(MapGroupRepository repository) {
 	    return args -> {
-	      log.info("Preloading " + repository.save(new MapGroup("White Council")));
+	      log.info("Preloading " + repository.save(new MapGroup("White Council", 1, "1,2")));
 	    };
 	}
 
