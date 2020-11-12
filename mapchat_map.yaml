@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mapchat-map-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: map
+  template:
+    metadata:
+      labels:
+        app: map
+    spec:
+      containers:
+      - name: mapchat-map
+        image: chris360/mapchat-map:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mapchat-map-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: map
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30003

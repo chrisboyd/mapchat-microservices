@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mapchat-mapgroup-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mapgroup
+  template:
+    metadata:
+      labels:
+        app: mapgroup
+    spec:
+      containers:
+      - name: mapchat-mapgroup
+        image: chris360/mapchat-mapgroup:latest
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mapchat-mapgroup-service
+  namespace: default
+spec:
+  type: NodePort
+  selector:
+    app: mapgroup
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30004
