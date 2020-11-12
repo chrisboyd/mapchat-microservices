@@ -16,6 +16,8 @@ public class MapGroupLoadDatabase {
 	CommandLineRunner initDatabase(MapGroupRepository repository) {
 	    return args -> {
 	      log.info("Preloading " + repository.save(new MapGroup("White Council", 1, "1,2")));
+	      log.info("Preloading " + repository.save(new MapGroup("Dark Council", 2, "1,2")));
+	      
 	    };
 	}
 
