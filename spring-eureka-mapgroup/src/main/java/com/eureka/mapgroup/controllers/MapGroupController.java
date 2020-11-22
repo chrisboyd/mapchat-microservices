@@ -47,6 +47,7 @@ public class MapGroupController {
 	//Aggregate
 	@GetMapping("/")
 	List<MapGroup> all() {
+		log.info("GET: some string" );
 		return mapGroupRepository.findAll();
 	}
 	

@@ -12,8 +12,6 @@
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
     <modules>
-        <module>../spring-eureka-server</module>
-        <module>../spring-eureka-zuul</module>
 		<module>../spring-eureka-map</module>
 		<module>../spring-eureka-user</module>
 		<module>../spring-eureka-mapgroup</module>

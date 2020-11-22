@@ -1,0 +1,7 @@
+[INFO ] 2020-11-22 10:17:42.549 [main] MapApplicationTests - Starting MapApplicationTests on chris.hitronhub.home with PID 18868 (started by chrisboyd in /Users/chrisboyd/Google_Drive/GitHub/microservices-spring-boot/spring-eureka-map)
+[DEBUG] 2020-11-22 10:17:42.580 [main] MapApplicationTests - Running with Spring Boot v2.3.5.RELEASE, Spring v5.2.10.RELEASE
+[INFO ] 2020-11-22 10:17:42.582 [main] MapApplicationTests - No active profile set, falling back to default profiles: default
+[INFO ] 2020-11-22 10:17:54.263 [main] MapApplicationTests - Started MapApplicationTests in 12.727 seconds (JVM running for 18.507)
+[INFO ] 2020-11-22 10:17:54.457 [main] MapLoadDatabase - Preloading com.eureka.map.entities.Map@111cba40
+[INFO ] 2020-11-22 10:17:54.460 [main] MapLoadDatabase - Preloading com.eureka.map.entities.Map@755a7218
+[INFO ] 2020-11-22 10:17:54.468 [main] MapLoadDatabase - Preloading com.eureka.map.entities.Map@61b60600

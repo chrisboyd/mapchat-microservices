@@ -11,9 +11,10 @@ import org.springframework.context.annotation.Configuration;
 public class MapLoadDatabase {
 	private static final Logger log = LoggerFactory.getLogger(MapLoadDatabase.class);
 
+
 	@Bean
 	  CommandLineRunner initDatabase(MapRepository repository) {
-
+	
 	    return args -> {
 	      log.info("Preloading " + repository.save(new Map(49.335096, -122.937257, 100)));
 	      log.info("Preloading " + repository.save(new Map(49.322201, -122.980560, 200)));

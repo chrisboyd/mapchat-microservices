@@ -45,6 +45,7 @@ public class MapController {
 	//Aggregate
 	@GetMapping("/")
 	List<Map> all() {
+		log.debug("GET DEBUG");
 		return repository.findAll();
 	}
 	
