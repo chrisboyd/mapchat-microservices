@@ -1,0 +1,48 @@
+Configutation:
+  name: Default
+
+  Appenders:
+
+    Console:
+      name: Console_Appender
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"
+
+    File:
+      name: File_Appender
+      fileName: logs/mapgroup.log
+      PatternLayout:
+        pattern: "[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %c{1} - %msg%n"  
+    
+    SMTP:
+      name: Mail
+      subject: "Error Log From MapChat-MapGroup Service"
+      from: "mapchatlogger@gmail.com"
+      to: "mapchatlogger@gmail.com"
+      smtpHost: "smtp.gmail.com"
+      smtpPort: 465
+      bufferSize: 100
+      smtpPassword: willitwork1
+      ignoreExceptions: false
+      smtpUsername: mapchatlogger
+      smtpProtocol: smtps        
+
+  Loggers:
+
+      Root:
+        level: info
+        AppenderRef:
+          - ref: Console_Appender
+         
+
+      Logger:
+        - name:  com.eureka.mapgroup.controllers
+          level: info
+          AppenderRef:
+            - ref: Console_Appender
+              level: info
+            - ref: File_Appender
+              level: info
+            - ref: Mail
+              level: error

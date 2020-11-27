@@ -14,14 +14,16 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import javax.servlet.http.*;
+
 
 
 @RestController
 @RequestMapping("/")
 public class MapGroupController {
-	private static final Logger log = LoggerFactory.getLogger(MapGroupController.class);
+	private static final Logger logger = LogManager.getLogger();
 
 	@Autowired
 	private final MapGroupRepository mapGroupRepository;
@@ -46,8 +48,8 @@ public class MapGroupController {
 	
 	//Aggregate
 	@GetMapping("/")
-	List<MapGroup> all() {
-		log.info("GET: some string" );
+	List<MapGroup> all(HttpServletRequest request) {
+		logger.error("this is my error " + request.getRemoteAddr());
 		return mapGroupRepository.findAll();
 	}
 	
