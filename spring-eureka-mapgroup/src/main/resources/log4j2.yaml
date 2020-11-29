@@ -23,7 +23,7 @@ Configutation:
       smtpHost: "smtp.gmail.com"
       smtpPort: 465
       bufferSize: 100
-      smtpPassword: 
+      smtpPassword: willitwork1
       ignoreExceptions: false
       smtpUsername: mapchatlogger
       smtpProtocol: smtps        
@@ -37,7 +37,7 @@ Configutation:
          
 
       Logger:
-        - name:  com.eureka.mapgroup.controllers
+        - name:  com.eureka.mapgroup
           level: info
           AppenderRef:
             - ref: Console_Appender
@@ -46,3 +46,5 @@ Configutation:
               level: info
             - ref: Mail
               level: error
+      
+ 
