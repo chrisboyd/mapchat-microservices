@@ -36,7 +36,7 @@ public class MapGroup extends AuditModel{
 	}
 	
 	public int getId() {
-		logger.info("MapGroup.getId(): " + id + this.toString());
+		logger.info("MapGroup.getId(): " + id + " " + this.toString());
 		return id;
 	}
 	public void setId(int id) {

@@ -14,6 +14,7 @@ public class MapgroupApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(MapgroupApplication.class, args);
+		
 	}
 }
 
