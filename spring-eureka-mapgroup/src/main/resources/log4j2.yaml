@@ -23,7 +23,7 @@ Configutation:
       smtpHost: "smtp.gmail.com"
       smtpPort: 465
       bufferSize: 100
-      smtpPassword: 
+      smtpPassword: willitwork1
       ignoreExceptions: false
       smtpUsername: mapchatlogger
       smtpProtocol: smtps        

@@ -35,9 +35,10 @@ public class MapGroupController {
 	}
 	
 	@RequestMapping("/test")
-	public void errorLog(HttpServletRequest request) {
+	public String errorLog(HttpServletRequest request) {
 		//show working error command
 		logger.error(request.getRemoteAddr() + " exceeded request threshold, blocking access for 10 minutes");
+		return ("Tested client breaching request threshold, check logs for ERROR entry");
 	}
 	
 	//Aggregate

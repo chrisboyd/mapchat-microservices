@@ -91,3 +91,30 @@
 [INFO ] 2020-12-01 19:58:29.297 [main] - MapGroup.getId(): 0 com.eureka.mapgroup.entities.MapGroup@5a3bc7ed
 [INFO ] 2020-12-01 19:58:29.299 [main] - Preloading com.eureka.mapgroup.entities.MapGroup@5a3bc7ed
 [ERROR] 2020-12-01 19:58:41.658 [http-nio-80-exec-1] - 0:0:0:0:0:0:0:1 exceeded request threshold, blocking access for 10 minutes
+[INFO ] 2020-12-01 20:03:43.232 [main] - Starting MapgroupApplicationTests on chris.hitronhub.home with PID 70562 (started by chrisboyd in /Users/chrisboyd/Google_Drive/GitHub/mapchat-microservices/spring-eureka-mapgroup)
+[INFO ] 2020-12-01 20:03:43.240 [main] - No active profile set, falling back to default profiles: default
+[INFO ] 2020-12-01 20:03:55.449 [main] - Started MapgroupApplicationTests in 12.747 seconds (JVM running for 17.285)
+[INFO ] 2020-12-01 20:03:55.452 [main] - New MapGroup: White Council,mapId: 1members: 1,2
+[INFO ] 2020-12-01 20:03:55.473 [main] - MapGroup.getId(): 0 com.eureka.mapgroup.entities.MapGroup@6ac45c0c
+[INFO ] 2020-12-01 20:03:55.642 [main] - Preloading com.eureka.mapgroup.entities.MapGroup@6ac45c0c
+[INFO ] 2020-12-01 20:03:55.643 [main] - New MapGroup: Dark Council,mapId: 2members: 1,2
+[INFO ] 2020-12-01 20:03:55.644 [main] - MapGroup.getId(): 0 com.eureka.mapgroup.entities.MapGroup@3e43f049
+[INFO ] 2020-12-01 20:03:55.647 [main] - Preloading com.eureka.mapgroup.entities.MapGroup@3e43f049
+[INFO ] 2020-12-01 20:12:56.850 [main] - Starting MapgroupApplicationTests on chris.hitronhub.home with PID 70664 (started by chrisboyd in /Users/chrisboyd/Google_Drive/GitHub/mapchat-microservices/spring-eureka-mapgroup)
+[INFO ] 2020-12-01 20:12:56.855 [main] - No active profile set, falling back to default profiles: default
+[INFO ] 2020-12-01 20:13:10.855 [main] - Started MapgroupApplicationTests in 14.451 seconds (JVM running for 19.995)
+[INFO ] 2020-12-01 20:13:10.862 [main] - New MapGroup: White Council,mapId: 1members: 1,2
+[INFO ] 2020-12-01 20:13:10.885 [main] - MapGroup.getId(): 0 com.eureka.mapgroup.entities.MapGroup@79df80a4
+[INFO ] 2020-12-01 20:13:11.080 [main] - Preloading com.eureka.mapgroup.entities.MapGroup@79df80a4
+[INFO ] 2020-12-01 20:13:11.082 [main] - New MapGroup: Dark Council,mapId: 2members: 1,2
+[INFO ] 2020-12-01 20:13:11.084 [main] - MapGroup.getId(): 0 com.eureka.mapgroup.entities.MapGroup@4fb57fb3
+[INFO ] 2020-12-01 20:13:11.088 [main] - Preloading com.eureka.mapgroup.entities.MapGroup@4fb57fb3
+[INFO ] 2020-12-01 20:24:31.081 [main] - Starting MapgroupApplicationTests on chris.hitronhub.home with PID 70821 (started by chrisboyd in /Users/chrisboyd/Google_Drive/GitHub/mapchat-microservices/spring-eureka-mapgroup)
+[INFO ] 2020-12-01 20:24:31.097 [main] - No active profile set, falling back to default profiles: default
+[INFO ] 2020-12-01 20:24:41.268 [main] - Started MapgroupApplicationTests in 10.647 seconds (JVM running for 13.512)
+[INFO ] 2020-12-01 20:24:41.282 [main] - New MapGroup: White Council,mapId: 1members: 1,2
+[INFO ] 2020-12-01 20:24:41.336 [main] - MapGroup.getId(): 0 com.eureka.mapgroup.entities.MapGroup@6ac45c0c
+[INFO ] 2020-12-01 20:24:41.566 [main] - Preloading com.eureka.mapgroup.entities.MapGroup@6ac45c0c
+[INFO ] 2020-12-01 20:24:41.566 [main] - New MapGroup: Dark Council,mapId: 2members: 1,2
+[INFO ] 2020-12-01 20:24:41.567 [main] - MapGroup.getId(): 0 com.eureka.mapgroup.entities.MapGroup@3e43f049
+[INFO ] 2020-12-01 20:24:41.570 [main] - Preloading com.eureka.mapgroup.entities.MapGroup@3e43f049
